@@ -38,9 +38,9 @@ SET(READLINE_LIB_SRC
         )
         
 IF(DEFINED WIN32)
-	FILE(COPY config.h.win32 config.h)
+	configure_file(config.h.win32 config.h COPYONLY)
 ELSE(DEFINED WIN32)
-	FILE(COPY config.h.linux config.h)
+	configure_file(config.h.linux config.h COPYONLY)
 ENDIF(DEFINED WIN32)       
 
 ADD_DEFINITIONS(-DBUILD_READLINE_DLL -DHAVE_CONFIG_H)
