@@ -36,6 +36,12 @@ SET(READLINE_LIB_SRC
         tilde.c
         compat.c
         )
+        
+IF(DEFINED WIN32)
+	FILE(COPY config.h.win32 config.h)
+ELSE(DEFINED WIN32)
+	FILE(COPY config.h.linux config.h)
+ENDIF(DEFINED WIN32)       
 
 ADD_DEFINITIONS(-DBUILD_READLINE_DLL -DHAVE_CONFIG_H)
 
@@ -43,7 +49,9 @@ ADD_DEFINITIONS(-DBUILD_READLINE_DLL -DHAVE_CONFIG_H)
 
 ADD_LIBRARY(readline_shared SHARED ${READLINE_LIB_SRC})
 
-#TARGET_LINK_LIBRARIES(readline_shared )
+IF(DEFINED WIN32)
+	TARGET_LINK_LIBRARIES(readline_shared pdcurses)
+ENDIF(DEFINED WIN32)
 
 SET_TARGET_PROPERTIES(readline_shared PROPERTIES
                         OUTPUT_NAME ${READLINE_LIB_NAME}

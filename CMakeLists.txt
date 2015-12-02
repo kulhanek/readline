@@ -12,6 +12,10 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8 FATAL_ERROR)
 # define project version -------------------------
 SET(READLINE_VERSION 6.2.0)
 
+IF(DEFINED WIN32)
+	SET(PDCURSES_VERSION 3.4.0)
+ENDIF(DEFINED WIN32)	
+
 # what languages we use --------------------------
 ENABLE_LANGUAGE(C)
 
@@ -31,8 +35,12 @@ ENDIF(NOT DEVELOPMENT_ROOT)
 # external/internal libraries --------------------------------------------------
 # ==============================================================================
 
-INCLUDE_DIRECTORIES("include/readline")
+INCLUDE_DIRECTORIES("include")
 SET(READLINE_LIB_NAME readline)
+
+IF(DEFINED WIN32)
+	SET(PDCURSES_LIB_NAME pdcurses)
+ENDIF(DEFINED WIN32)
 
 # ==============================================================================
 # output directories -----------------------------------------------------------

@@ -5,7 +5,7 @@
    characters, even if the OS supports them. */
 /* #undef NO_MULTIBYTE_SUPPORT */
 
-/* #undef _FILE_OFFSET_BITS */
+#define _FILE_OFFSET_BITS 64
 
 /* Define if on MINIX.  */
 /* #undef _MINIX */
@@ -34,16 +34,16 @@
 /* #undef STAT_MACROS_BROKEN */
 
 /* Define if you have the fcntl function. */
-#define HAVE_FCNTL 1
+/* #undef HAVE_FCNTL */
 
 /* Define if you have the getpwent function. */
-#define HAVE_GETPWENT 1
+/* #undef HAVE_GETPWENT */
 
 /* Define if you have the getpwnam function. */
-#define HAVE_GETPWNAM 1
+/* #undef HAVE_GETPWNAM */
 
 /* Define if you have the getpwuid function. */
-#define HAVE_GETPWUID 1
+/* #undef HAVE_GETPWUID */
 
 /* Define if you have the isascii function. */
 #define HAVE_ISASCII 1
@@ -61,10 +61,10 @@
 #define HAVE_ISXDIGIT 1
 
 /* Define if you have the kill function. */
-#define HAVE_KILL 1
+/* #undef HAVE_KILL */
 
 /* Define if you have the lstat function. */
-#define HAVE_LSTAT 1
+/* #undef HAVE_LSTAT */
 
 /* Define if you have the mbrlen function. */
 #define HAVE_MBRLEN 1
@@ -82,10 +82,10 @@
 #define HAVE_PUTENV 1
 
 /* Define if you have the select function.  */
-#define HAVE_SELECT 1
+/* #undef HAVE_SELECT */
 
 /* Define if you have the setenv function.  */
-#define HAVE_SETENV 1
+/* #undef HAVE_SETENV */
 
 /* Define if you have the setlocale function. */
 #define HAVE_SETLOCALE 1
@@ -96,13 +96,13 @@
 /* Define if you have the strcoll function.  */
 #define HAVE_STRCOLL 1
 
-/* #undef STRCOLL_BROKEN */
+#define STRCOLL_BROKEN 1
 
 /* Define if you have the strpbrk function.  */
 #define HAVE_STRPBRK 1
 
 /* Define if you have the tcgetattr function.  */
-#define HAVE_TCGETATTR 1
+/* #undef HAVE_TCGETATTR */
 
 /* Define if you have the towlower function.  */
 #define HAVE_TOWLOWER 1
@@ -123,7 +123,7 @@
 #define HAVE_WCTYPE 1
 
 /* Define if you have the wcwidth function.  */
-#define HAVE_WCWIDTH 1
+/* #undef HAVE_WCWIDTH */
 
 #define STDC_HEADERS 1
 
@@ -134,7 +134,7 @@
 #define HAVE_FCNTL_H 1
 
 /* Define if you have the <langinfo.h> header file.  */
-#define HAVE_LANGINFO_H 1
+/* #undef HAVE_LANGINFO_H */
 
 /* Define if you have the <limits.h> header file.  */
 #define HAVE_LIMITS_H 1
@@ -149,7 +149,7 @@
 /* #undef HAVE_NDIR_H */
 
 /* Define if you have the <pwd.h> header file.  */
-#define HAVE_PWD_H 1
+/* #undef HAVE_PWD_H */
 
 /* Define if you have the <stdarg.h> header file.  */
 #define HAVE_STDARG_H 1
@@ -179,19 +179,19 @@
 /* #undef HAVE_SYS_PTEM_H */
 
 /* Define if you have the <sys/select.h> header file.  */
-#define HAVE_SYS_SELECT_H 1
+/* #undef HAVE_SYS_SELECT_H */
 
 /* Define if you have the <sys/stream.h> header file.  */
 /* #undef HAVE_SYS_STREAM_H */
 
 /* Define if you have the <termcap.h> header file.  */
-#define HAVE_TERMCAP_H 1
+/* #undef HAVE_TERMCAP_H */
 
 /* Define if you have the <termio.h> header file.  */
-#define HAVE_TERMIO_H 1
+/* #undef HAVE_TERMIO_H */
 
 /* Define if you have the <termios.h> header file.  */
-#define HAVE_TERMIOS_H 1
+/* #undef HAVE_TERMIOS_H */
 
 /* Define if you have the <unistd.h> header file.  */
 #define HAVE_UNISTD_H 1
@@ -217,24 +217,24 @@
 #define HAVE_WINT_T 1
 
 /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
-#define HAVE_LANGINFO_CODESET 1
+/* #undef HAVE_LANGINFO_CODESET */
 
 /* Definitions pulled in from aclocal.m4. */
 #define VOID_SIGHANDLER 1
 
-#define GWINSZ_IN_SYS_IOCTL 1
+/* #undef GWINSZ_IN_SYS_IOCTL */
 
-#define STRUCT_WINSIZE_IN_SYS_IOCTL 1
+/* #undef STRUCT_WINSIZE_IN_SYS_IOCTL */
 
 /* #undef STRUCT_WINSIZE_IN_TERMIOS */
 
 /* #undef TIOCSTAT_IN_SYS_IOCTL */
 
-#define FIONREAD_IN_SYS_IOCTL 1
+/* #undef FIONREAD_IN_SYS_IOCTL */
 
 /* #undef SPEED_T_IN_SYS_TYPES */
 
-#define HAVE_GETPW_DECLS 1
+/* #undef HAVE_GETPW_DECLS */
 
 /* #undef STRUCT_DIRENT_HAS_D_INO */
 
@@ -242,15 +242,15 @@
 
 /* #undef HAVE_BSD_SIGNALS */
 
-#define HAVE_POSIX_SIGNALS 1
+/* #undef HAVE_POSIX_SIGNALS */
 
 /* #undef HAVE_USG_SIGHOLD */
 
-/* #undef MUST_REINSTALL_SIGHANDLERS */
+#define MUST_REINSTALL_SIGHANDLERS 1
 
-#define HAVE_POSIX_SIGSETJMP 1
+/* #undef HAVE_POSIX_SIGSETJMP */
 
-/* #undef CTYPE_NON_ASCII */
+#define CTYPE_NON_ASCII 1
 
 /* modify settings or make new ones based on what autoconf tells us. */
 
