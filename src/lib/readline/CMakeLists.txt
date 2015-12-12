@@ -51,6 +51,7 @@ ADD_LIBRARY(readline_shared SHARED ${READLINE_LIB_SRC})
 
 IF(DEFINED WIN32)
 	TARGET_LINK_LIBRARIES(readline_shared pdcurses)
+    ADD_DEPENDENCIES(readline_shared pdcurses_shared)
 ELSE(DEFINED WIN32)
     TARGET_LINK_LIBRARIES(readline_shared ncurses)
 ENDIF(DEFINED WIN32)
